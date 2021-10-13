@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Actividades</string>
+    <string name="mensaje_bienvenida">revisandocicloVida</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="email">Email</string>
+    <string name="clave">Clave</string>
+</resources>
