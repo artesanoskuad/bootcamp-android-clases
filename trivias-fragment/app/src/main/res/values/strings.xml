@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trivia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_title">Bienvenido al logo de trivia</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="trivia_title">Esto es una trivia</string>
+</resources>
