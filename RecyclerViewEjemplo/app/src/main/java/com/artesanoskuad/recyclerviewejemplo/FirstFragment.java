@@ -4,17 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.artesanoskuad.recyclerviewejemplo.databinding.FragmentFirstBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment implements PassElementSelected {
 
     private FragmentFirstBinding binding;
     private List<String> mWordList;
@@ -27,32 +28,53 @@ public class FirstFragment extends Fragment {
         wordListAutoGenerate();
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setupRecyclerView();
+        setupClickListener();
+    }
 
-        /*binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+    private void setupClickListener() {
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                addWordItem();
             }
-        });*/
+        });
+    }
+
+    private void addWordItem() {
+        mWordList.add("valor desde Java");
+        binding.rvWordList.getAdapter().notifyItemInserted(mWordList.size());
+        binding.rvWordList.smoothScrollToPosition(mWordList.size());
     }
 
     private List<String> wordListAutoGenerate() {
         mWordList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             mWordList.add("Word " + i);
         }
         return mWordList;
     }
 
+    private void setupRecyclerView() {
+        WordListAdapter wordListAdapter = new WordListAdapter(mWordList, this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        binding.rvWordList.setAdapter(wordListAdapter);
+        binding.rvWordList.setLayoutManager(linearLayoutManager);
+    }
+
+    @Override
+    public void passElement(String element) {
+        Toast.makeText(getContext(), element, Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+
         binding = null;
     }
 

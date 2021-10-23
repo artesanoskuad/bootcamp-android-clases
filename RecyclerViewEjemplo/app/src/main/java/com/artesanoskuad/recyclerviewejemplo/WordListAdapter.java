@@ -1,6 +1,7 @@
 package com.artesanoskuad.recyclerviewejemplo;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -14,6 +15,12 @@ import java.util.List;
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
     private List<String> mWordList;
+    private PassElementSelected listener;
+
+    public WordListAdapter(List<String> mWordList, PassElementSelected listener) {
+        this.mWordList = mWordList;
+        this.listener = listener;
+    }
 
     @NonNull
     @Override
@@ -34,20 +41,31 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mWordList.size();
     }
 
-    public static class WordViewHolder extends
-            RecyclerView.ViewHolder {
+    public class WordViewHolder extends
+            RecyclerView.ViewHolder implements View.OnClickListener {
+
         public TextView wordItemTv;
 
         public WordViewHolder(WordListItemBinding binding) {
             super(binding.getRoot());
             wordItemTv = binding.tvWordItem;
+            wordItemTv.setOnClickListener(this);
         }
 
-        public void bind(String word){
+        public void bind(String word) {
             wordItemTv.setText(word);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getLayoutPosition();
+            String element = mWordList.get(position);
+            mWordList.set(position, "Seleccionado " + element);
+            notifyDataSetChanged();
+            listener.passElement(element);
         }
     }
 }
