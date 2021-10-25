@@ -15,14 +15,14 @@ import com.artesanoskuad.mvpejemplo.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private DonationModel model;
+    private DonationController controller;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        model = new DonationModel();
+        controller = new DonationController();
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -44,24 +44,16 @@ public class FirstFragment extends Fragment {
     }
 
     public void saveDonationProfe() {
-        if (esMontoValido()) {
-            sumoValor();
-        } else {
-            displayMessage("Donación incorrecta, debe ser mayor a 0");
-        }
-    }
-
-    private void sumoValor() {
         Integer valorDonacion = stringToIntegerValue(binding.etDonacion.getText().toString());
-        this.model.saveDonation(new Donation(valorDonacion));
-        Integer nuevoTotal = this.model.getTotalAmount();
-        binding.tvTotalDonaciones.setText(String.valueOf(nuevoTotal));
-        displayMessage("Total: " + nuevoTotal);
-        binding.etDonacion.setText("");
-    }
-
-    private boolean esMontoValido() {
-        return stringToIntegerValue(binding.etDonacion.getText().toString()) > 0;
+        boolean guardarDonacion = controller.save(valorDonacion);
+        if(guardarDonacion) {
+            Integer nuevoTotal = controller.getTotalAmount();
+            binding.tvTotalDonaciones.setText(String.valueOf(nuevoTotal));
+            displayMessage("Total: " + nuevoTotal);
+            binding.etDonacion.setText("");
+        } else {
+            displayMessage("Debe ingresar un monto superior a 0");
+        }
     }
 
     private void displayMessage(String message) {
