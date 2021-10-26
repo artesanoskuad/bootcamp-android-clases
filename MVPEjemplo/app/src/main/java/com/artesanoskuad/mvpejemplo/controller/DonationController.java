@@ -1,4 +1,7 @@
-package com.artesanoskuad.mvpejemplo;
+package com.artesanoskuad.mvpejemplo.controller;
+
+import com.artesanoskuad.mvpejemplo.model.Donation;
+import com.artesanoskuad.mvpejemplo.model.DonationModel;
 
 public class DonationController {
     private DonationModel donationModel;

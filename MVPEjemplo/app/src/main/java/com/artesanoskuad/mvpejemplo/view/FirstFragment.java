@@ -1,4 +1,4 @@
-package com.artesanoskuad.mvpejemplo;
+package com.artesanoskuad.mvpejemplo.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.artesanoskuad.mvpejemplo.R;
+import com.artesanoskuad.mvpejemplo.controller.DonationController;
 import com.artesanoskuad.mvpejemplo.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {

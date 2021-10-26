@@ -1,4 +1,4 @@
-package com.artesanoskuad.mvpejemplo;
+package com.artesanoskuad.mvpejemplo.model;
 
 public class Donation {
 

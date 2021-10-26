@@ -1,4 +1,6 @@
-package com.artesanoskuad.mvpejemplo;
+package com.artesanoskuad.mvpejemplo.model;
+
+import com.artesanoskuad.mvpejemplo.model.Donation;
 
 public class DonationModel {
     private int totalAmount;
