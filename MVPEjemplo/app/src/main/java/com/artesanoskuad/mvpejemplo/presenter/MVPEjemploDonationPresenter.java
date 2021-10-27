@@ -38,5 +38,4 @@ public class MVPEjemploDonationPresenter implements  DonationPresenter {
             return Integer.parseInt(value);
         }
     }
-
 }
