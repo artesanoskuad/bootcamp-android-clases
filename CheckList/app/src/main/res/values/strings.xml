@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CheckList</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="listado_de_inspecciones_fragment_label">Listado de Inspecciones</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="agregar">Agregar</string>
+    <string name="previous">Previous</string>
+
+    <string name="listado_de_inspecciones">Listado de Inspecciones</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="agregar_inspeccion">Agregar Inspección</string>
+    <string name="ingresar_marca">Ingresar Marca</string>
+    <string name="ingresar_modelo">Ingresar Modelo</string>
+    <string name="ingresar_fecha">Ingresar Fecha</string>
+    <string name="detalles_del_equipo">Detalles del Equipo</string>
+    <string name="guardar">Guardar</string>
+</resources>

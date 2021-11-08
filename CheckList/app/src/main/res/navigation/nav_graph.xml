@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listadoDeInspeccionesFragment">
+
+    <fragment
+        android:id="@+id/listadoDeInspeccionesFragment"
+        android:name="com.artesanoskuad.checklist.ListadoDeInspeccionesFragment"
+        android:label="@string/listado_de_inspecciones_fragment_label"
+        tools:layout="@layout/fragment_listado_inspecciones">
+
+
+        <action
+            android:id="@+id/action_listadoDeInspeccionesFragment_to_agregarInspeccionFragment"
+            app:destination="@id/agregarInspeccionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarInspeccionFragment"
+        android:name="com.artesanoskuad.checklist.AgregarInspeccionFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_agregar_inspeccion">
+
+        <action
+            android:id="@+id/action_agregarInspeccionFragment_to_listadoDeInspeccionesFragment"
+            app:destination="@id/listadoDeInspeccionesFragment" />
+    </fragment>
+</navigation>
