@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listadoDeInspeccionesFragment"
-        android:name="com.artesanoskuad.checklist.ListadoDeInspeccionesFragment"
+        android:name="com.artesanoskuad.checklist.view.ListadoDeInspeccionesFragment"
         android:label="@string/listado_de_inspecciones_fragment_label"
         tools:layout="@layout/fragment_listado_inspecciones">
 
