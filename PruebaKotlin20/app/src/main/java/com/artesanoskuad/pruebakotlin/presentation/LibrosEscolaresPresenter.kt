@@ -4,9 +4,7 @@ import com.artesanoskuad.pruebakotlin.model.LibrosEscolares
 import com.artesanoskuad.pruebakotlin.view.LibrosEscolaresView
 
 interface LibrosEscolaresPresenter {
-
     fun attachView(view: LibrosEscolaresView)
-
     fun add(new: LibrosEscolares)
     fun getAll() : List<LibrosEscolares>
 

@@ -14,7 +14,7 @@ data class LibrosEscolares(
     fun precioFormateado() = "$$precio"
 
     override fun toString(): String {
-        return "LibrosEscolares(nombre='$nombre', ISBN='$ISBN', fechaPublicacion='$fechaPublicacion', editorial='$editorial', cantidadDePaginas=$cantidadDePaginas, precio=$precio, autorDelLibro='$autorDelLibro', tipoLibro=$tipoLibro)"
+        return "LibrosEscolares(nombre='$nombre', ISBN='$ISBN', fechaPublicacion='$fechaPublicacion', editorial='$editorial', cantidadDePaginas=$cantidadDePaginas, precio=${precioFormateado()}, autorDelLibro='$autorDelLibro', tipoLibro=$tipoLibro)"
     }
 }
 
