@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/checkRegisterDetailsFragment">
+    app:startDestination="@id/checkRegisterListFragment">
 
     <fragment
         android:id="@+id/checkRegisterListFragment"
-        android:name="com.artesanoskuad.consumos.CheckResiterListFragment"
+        android:name="com.artesanoskuad.consumos.view.CheckResiterListFragment"
         android:label="@string/check_register_list_fragment_label"
         tools:layout="@layout/fragment_check_register_list">
 
